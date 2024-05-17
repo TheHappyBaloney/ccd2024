@@ -15,7 +15,7 @@
       "title": "Web Insights",
       "content": "Improve the Lighthouse rating of the HTML CSS and JS files provided. Download them and edit and submit back to us for evaluation.",
       "image": "/assets/images/contestCard.png",
-      "link": "/#"
+      "link": "/api/contests/psi"
     },
     {
       "id": 3,
