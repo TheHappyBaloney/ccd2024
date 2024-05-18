@@ -14,6 +14,7 @@ export const debounce = (callback: any, delay: number) => {
     }, delay);
   };
 };
+
 export function convertTimeFormat(timeString: string) {
   let currentTime = new Date(timeString);
   let convertedtimeString = currentTime.toLocaleTimeString('en-IN', { timeStyle: "short", hour12: true });
@@ -39,4 +40,20 @@ export function maskEmail(email: string): string {
 
   // Combine the masked username with the domain
   return `${maskedUsername}@${domain}`;
+}
+
+export function isLessThan24HoursLeft(eventDateString: string) {
+  const eventDate = new Date(eventDateString);
+
+  // Get the current date and time
+  const currentDate = new Date();
+
+  // Calculate the difference in milliseconds
+  const diffInMs = eventDate.getTime() - currentDate.getTime();
+
+  // Convert the difference from milliseconds to hours
+  const diffInHours = diffInMs / (1000 * 60 * 60);
+
+  // Check if the difference is less than 24 hours
+  return diffInHours <= 24;
 }
